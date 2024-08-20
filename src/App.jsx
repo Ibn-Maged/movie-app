@@ -6,6 +6,8 @@ import { AddMovie } from "./pages/AddMovie";
 import Details from "./pages/Details";
 import NavBar from "./components/NavBar";
 import MoviesContextProvider from "./contexts/MoviesContextProvider";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
 
 const router = createBrowserRouter([
     {
@@ -38,11 +40,11 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <>
+        <div className="container">
             <MoviesContextProvider>
                 <RouterProvider router={router}></RouterProvider>
             </MoviesContextProvider>
-        </>
+        </div>
     );
 }
 
