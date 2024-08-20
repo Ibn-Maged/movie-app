@@ -5,6 +5,7 @@ import { ContactUs } from "./pages/ContactUs";
 import { AddMovie } from "./pages/AddMovie";
 import Details from "./pages/Details";
 import NavBar from "./components/NavBar";
+import MoviesContextProvider from "./contexts/MoviesContextProvider";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +39,9 @@ const router = createBrowserRouter([
 function App() {
     return (
         <>
-            <RouterProvider router={router}></RouterProvider>
+            <MoviesContextProvider>
+                <RouterProvider router={router}></RouterProvider>
+            </MoviesContextProvider>
         </>
     );
 }
