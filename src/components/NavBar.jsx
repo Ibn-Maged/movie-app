@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom"
 const NavBar = () => {
   return (
     <>
-        <nav className="navbar navbar-expand-lg nav-underline">
+        <nav className="navbar navbar-expand-lg nav-underline mb-5">
             <div className="container-fluid">
               <span className="navbar-brand">
                 Movie App

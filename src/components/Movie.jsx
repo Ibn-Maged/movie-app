@@ -1,11 +1,18 @@
-const Movie = ({title, overview, poster_path, genre_ids, release_date, vote_average, vote_count}) => {
+import { useNavigate } from "react-router-dom";
+import "./movie.css"
+const Movie = ({title, poster_path, id}) => {
     const api_img_path = "https://image.tmdb.org/t/p/w500/";
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`details/${id}`);
+    }
     return (
-      <div>
-        <div>name: {title}</div>
-        <div>overview: {overview}</div>
-        <div><img src={api_img_path + poster_path} alt="Movie Poster" /></div>
-      </div>
+    <div className="card col-3" style={{width: "18rem"}} onClick={handleClick}>
+    <img src={api_img_path + poster_path} className="card-img-top" alt="poster"/>
+    <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+    </div>
+    </div>
     )
 }
 

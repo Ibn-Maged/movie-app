@@ -3,13 +3,11 @@ import { moviesContext } from "../contexts/MoviesContextProvider"
 import Movie from "./Movie"
 
 const Movies = () => {
-    const { movies, movieGenres } = useContext(moviesContext);
-    console.log(movieGenres);
+    const { movies } = useContext(moviesContext);
     if(movies.length == 0) return <div>Loading</div>
     return (
-      <div>
-        {movies.map((movie)=><Movie {...movie}></Movie>)}
-        Movies
+      <div className="d-flex flex-wrap justify-content-between gap-5">
+        {movies.map((movie, index)=><Movie title={movie.title} poster_path={movie.poster_path} id={index}></Movie>)}
       </div>
     )
 }
