@@ -12,7 +12,9 @@ const Details = () => {
   return (
     <div className="d-flex col-12 flex-wrap gap-5">
       <div className="col-lg-4">
-        <img src={img_path + currentMovie.poster_path} alt="" className="poster-image img-fluid"/>
+        {currentMovie.poster_path ? <img src={img_path + currentMovie.poster_path} alt="" className="poster-image img-fluid"/> : 
+          <img src={currentMovie.customImage} alt="" className="poster-image img-fluid"/>
+        }
       </div>
       <div className="d-flex flex-column col-lg-7">
         <div className="d-flex justify-content-between align-items-center">

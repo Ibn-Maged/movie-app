@@ -14,6 +14,7 @@ const MoviesContextProvider = ({children}) => {
 
   const addMovie = (movie)=>{
     setMovies([...movies, movie]);
+    return movies.length;
   }
   useEffect(()=>{
     axios.get(url + discoverPath + apiKey).then(res=>setMovies(res.data.results));
