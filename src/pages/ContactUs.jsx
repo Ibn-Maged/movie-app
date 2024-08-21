@@ -1,5 +1,5 @@
 export const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <h1 className="text-center">Contact Us</h1>
   )
 }
