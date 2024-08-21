@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./movie.css"
+import "../styles/movie.css"
 const Movie = ({title, poster_path, id, customImage}) => {
     const api_img_path = "https://image.tmdb.org/t/p/w500/";
     const navigate = useNavigate();

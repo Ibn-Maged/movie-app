@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import MoviesContextProvider from "./contexts/MoviesContextProvider";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
                 path: "details/:id",
                 element: <Details/>,
             },
+            {
+                path: "/*",
+                element: <NotFound></NotFound>
+            }
         ],
     },
 ]);

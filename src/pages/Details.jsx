@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom"
 import { moviesContext } from "../contexts/MoviesContextProvider";
 import star from "../assets/star.svg"
 import "../styles/details.css"
+import NotFound from "./NotFound";
 const img_path = "https://image.tmdb.org/t/p/w500/";
 
 const Details = () => {
   const params = useParams();
   const {movies, movieGenres} = useContext(moviesContext);
   const currentMovie = movies[params.id];
+  if(params.id >= movies.length){
+    return <NotFound></NotFound>;
+  }
   return (
     <div className="d-flex col-12 flex-wrap gap-5">
       <div className="col-lg-4">
